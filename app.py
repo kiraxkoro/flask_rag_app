@@ -60,6 +60,9 @@ def load_model(model_name: str):
     print(f"Model {model_name} loaded successfully.")
 
 # --- API Endpoints ---
+
+
+
 @app.route('/')
 def home():
     return """
@@ -177,4 +180,4 @@ if __name__ == '__main__':
         print(f"Could not load default model on startup: {e}")
         print("Please set your API keys and use the /switch_model endpoint.")
     
-    app.run(debug=True, port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5001)

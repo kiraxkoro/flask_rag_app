@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  rag-app:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      - BACKEND=local
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}    
+      - HUGGINGFACE_API_KEY=${HUGGINGFACE_API_KEY}  
+    volumes:
+      - ./uploads:/app/uploads
+
+    
