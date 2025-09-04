@@ -35,7 +35,7 @@ def get_gemini_llm():
 
 def get_flan_t5_llm():
     """Initializes the Google Flan-T5 model from Hugging Face."""
-    if not os.getenv("HUGGINGFACEHUB_API_TOKEN"):
+    if not os.getenv("HUGGINGFACE_API_KEY"):  # ← NEW
         raise ValueError("HUGGINGFACEHUB_API_TOKEN environment variable not set.")
     return HuggingFaceHub(
         repo_id="google/flan-t5-large",
